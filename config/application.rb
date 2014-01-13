@@ -13,16 +13,14 @@ Bundler.require(:default, Rails.env)
 
 module DislikeIt
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.time_zone = 'Eastern Time (US & Canada)'
+    config.active_record.default_timezone = :local
 
-    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    # asset precompile setting for Heroku
+    config.assets.initialize_on_precompile = false
 
-    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    # get sass to compile my files in vendor
+    config.sass.load_paths << File.expand_path('../../vendor/assets/stylesheets/')
+
   end
 end
