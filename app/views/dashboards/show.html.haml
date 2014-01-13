@@ -1,2 +1,19 @@
-%h1 Dashboards#show
-%p Find me in app/views/dashboards/show.html.haml
+%h1 Dislike.it Dashboard
+= link_to 'Dislike something new', new_dislike_path
+%p You dislike, among other things:
+%ul 
+  - current_user.dislikes.each do |dislike|
+    %li
+      Name: 
+      = dislike.name
+    %li 
+      Comment:
+      = dislike.body
+    %li 
+      Category:
+      = dislike.category
+    %li 
+      Degree of dislike:
+      = dislike.degree
+  
+

@@ -24,7 +24,7 @@ class DislikesController < ApplicationController
   # POST /dislikes
   # POST /dislikes.json
   def create
-    @dislike = Dislike.new(dislike_params)
+    @dislike = current_user.dislikes.build(dislike_params)
 
     respond_to do |format|
       if @dislike.save

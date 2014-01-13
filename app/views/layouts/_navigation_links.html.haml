@@ -1,1 +1,4 @@
-/ add navigation links to this file
+.pull-right
+  - if current_user.present?
+    = link_to('Logout', destroy_user_session_path, method: :delete)
+
