@@ -1,4 +1,6 @@
 DislikeIt::Application.routes.draw do
+  resources :dislikes
+
   resources :welcome, only: [:index]
   devise_for :users
   

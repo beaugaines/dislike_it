@@ -1,0 +1,27 @@
+%h1 Listing dislikes
+
+%table
+  %tr
+    %th Name
+    %th Body
+    %th Category
+    %th Degree
+    %th User
+    %th
+    %th
+    %th
+
+  - @dislikes.each do |dislike|
+    %tr
+      %td= dislike.name
+      %td= dislike.body
+      %td= dislike.category
+      %td= dislike.degree
+      %td= dislike.user
+      %td= link_to 'Show', dislike
+      %td= link_to 'Edit', edit_dislike_path(dislike)
+      %td= link_to 'Destroy', dislike, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Dislike', new_dislike_path

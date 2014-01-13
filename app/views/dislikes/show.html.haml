@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @dislike.name
+%p
+  %b Body:
+  = @dislike.body
+%p
+  %b Category:
+  = @dislike.category
+%p
+  %b Degree:
+  = @dislike.degree
+%p
+  %b User:
+  = @dislike.user
+
+= link_to 'Edit', edit_dislike_path(@dislike)
+\|
+= link_to 'Back', dislikes_path
