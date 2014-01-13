@@ -1,5 +1,4 @@
 DislikeIt::Application.routes.draw do
-  get "dashboards/show"
   resources :welcome, only: [:index]
   devise_for :users
   
@@ -8,6 +7,5 @@ DislikeIt::Application.routes.draw do
   end
 
   root to: 'welcome#index'
-
   
 end
